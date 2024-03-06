@@ -1,9 +1,11 @@
 package strings
 
 //func longestCommonPrefix(strs []string) string {
-//	for i := 0; i <= 200; i++ {
-//		for _, elem := range strs {
-//			if
+//	var prefix []rune
+//	var prefixIndex int
+//	for _, str := range strs {
+//		for index, letter := range str {
+//
 //		}
 //	}
 //}
