@@ -3,20 +3,19 @@ package numbers
 import "fmt"
 
 func kidsWithCandies(candies []int, extraCandies int) []bool {
-	m := 0
-	a := make([]int, len(candies))
-	b := make([]bool, len(candies))
-
-	for i, elem := range candies {
-		a[i] = elem + extraCandies
-		if elem > m {
-			m = elem
+	maxValue := 0
+	result := make([]bool, len(candies))
+	for _, e := range candies {
+		if e > maxValue {
+			maxValue = e
 		}
 	}
-	for i := range a {
-		b[i] = a[i] >= m
+	for i, e := range candies {
+		if e+extraCandies >= maxValue {
+			result[i] = true
+		}
 	}
-	return b
+	return result
 }
 
 func Test1431() {
