@@ -6,6 +6,6 @@ import (
 
 func main() {
 	//linked_lists.Test141()
-	//strings.Test1071()
-	numbers.Test345()
+	//strings.Test151()
+	numbers.Test238()
 }
