@@ -1,20 +1,22 @@
 package numbers
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func maxArea(height []int) int {
 	maxVol := 0
 	start := 0
 	end := len(height) - 1
 	for start < end {
-		elem1 := height[start]
-		elem2 := height[end]
+		leftP := height[start]
+		rightP := height[end]
 		vol := 0
-		if elem1 < elem2 {
-			vol = (end - start) * elem1
+		if leftP < rightP {
+			vol = (end - start) * leftP
 			start++
 		} else {
-			vol = (end - start) * elem2
+			vol = (end - start) * rightP
 			end--
 		}
 		if vol > maxVol {
