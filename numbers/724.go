@@ -3,17 +3,21 @@ package numbers
 import "fmt"
 
 func pivotIndex(nums []int) int {
-	leftSideSum := 0
-	for i, elem := range nums {
-		localPivotSum := 0
-		for j := i + 1; j < len(nums); j++ {
-			localPivotSum += nums[j]
-		}
-		if localPivotSum == leftSideSum {
+	left := 0
+	right := 0
+
+	for _, num := range nums {
+		right += num
+	}
+
+	for i, num := range nums {
+		if left == right-num {
 			return i
 		}
-		leftSideSum += elem
+		left += num
+		right -= num
 	}
+
 	return -1
 }
 
@@ -23,5 +27,7 @@ func Test724() {
 	a = pivotIndex([]int{1, 2, 3})
 	fmt.Println(a)
 	a = pivotIndex([]int{2, 1, -1})
+	fmt.Println(a)
+	a = pivotIndex([]int{-1, -1, -1, -1, -1, 0})
 	fmt.Println(a)
 }
