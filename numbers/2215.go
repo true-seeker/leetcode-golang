@@ -2,11 +2,10 @@ package numbers
 
 import "fmt"
 
-type void struct{}
-
-var m void
-
 func findDifference(nums1 []int, nums2 []int) [][]int {
+	type void struct{}
+	var m void
+
 	res1 := make([]int, 0)
 	res2 := make([]int, 0)
 	union := make(map[int]void)
